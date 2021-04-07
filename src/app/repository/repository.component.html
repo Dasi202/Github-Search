@@ -1,0 +1,21 @@
+<div class="container mt-2">
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Search by repository Name..." name="search" [(ngModel)]="repositoryName" (keyup)="findRepository()" class="input-group"/>
+      </div>
+    </form>
+    <div class="row">
+      <h3>Repositories</h3>
+    <div class="card card bg-dark text-white col-12 col mt-3" *ngFor="let repo of repositories; let i = index">
+        <div class="card-body">
+          <h3>{{ repo.name }}</h3>
+          <p>Created: {{ repo.created_at | duration }} days ago</p>
+          <p>Language(s) Used: {{ repo.language }}</p>
+          <p>{{ repo.description }}</p>
+          <span>
+             <a href="{{ repo.html_url }}" target="_blank" class="btn btn-success">View Project</a>
+         </span>
+        </div>
+    </div>
+    </div>
+</div>
