@@ -1,0 +1,57 @@
+<div class="container mt-2">
+    <form>
+      <div class="form-group">
+        <input type="text" placeholder="Search by username..." name="search" [(ngModel)]="userName" (keyup)="searchUser()" class="input-group"/>
+      </div>
+    </form>
+    <div class="row justify-content-center">
+      <div class="my-auto"><h2>Displaying user</h2></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <img class="pic" src="{{ user.avatar_url }}" alt="avatar" /><br />
+      </div>
+      <div class="col-sm-12 col-md-8">
+        <table class="table table-dark rounded">
+          <tbody>
+            <tr>
+              <th scope="row">Name</th>
+              <td>{{ user.name }}</td>
+            </tr>
+            <tr>
+              <th scope="row">Github Link</th>
+              <td>
+                <a href="{{ user.html_url }}">{{ user.html_url }}</a>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Location</th>
+              <td>
+                {{ user.location }}
+              </td>
+            </tr>
+            <tr>
+              <td>Followers: {{ user.followers }}</td>
+              <td>Following: {{ user.following }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    </div>
+    <div *ngIf="user.public_repos">
+      <div class="row text-center">
+        <h2>Repositories</h2>
+      </div>
+      <div class="row">
+        <div class="card card bg-dark text-white col-12 col mt-3" *ngFor="let repo of userRepositories">
+          <div class="card-body">
+            <h3>{{ repo.name }}</h3>
+            <p>Created: {{ repo.created_at | duration }} days ago</p>
+            <p>Language(s) Used: {{ repo.language }}</p>
+            <p>{{ repo.description }}</p>
+            <span><a href="{{ repo.html_url }}" target="_blank" class="btn btn-success"> View Project </a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
