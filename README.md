@@ -9,7 +9,7 @@ An application that a user may enter a Github username into a form, submit it, a
 ## Setup/Installation Requirements
 - run npm install -g @angular/cli@next npm update.
 - clone this repo ``` git clone ()```
-- cd into the quote folder ``` cd gh-search ```
+- cd into the Gh-search folder ``` cd gh-search ```
 - run ``` npm install ```
 - Run ``` ng serve``` for a dev server.
 - Navigate to ``` http://localhost:4200/ ```
@@ -21,7 +21,7 @@ An application that a user may enter a Github username into a form, submit it, a
 * Search for a repository
 
 ## Live link
-
+Click: ,[https://dasi202.github.io/Github-Search/](https://dasi202.github.io/Github-Search/)
 
 ## Technologies Used 
 * Angular
